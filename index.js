@@ -66,6 +66,7 @@ function uploadFileToS3(filePath, bucketName, s3Key) {
                         Bucket: bucketName,
                         Key: s3Key,
                         Body: fileStream,
+                        ContentType: "video/mp4", // ✅ Ensures streaming instead of downloading
                     };
                     upload = new lib_storage_1.Upload({
                         client: s3,

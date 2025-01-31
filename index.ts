@@ -32,6 +32,7 @@ async function uploadFileToS3(filePath: string, bucketName: string, s3Key: strin
         Bucket: bucketName,
         Key: s3Key,
         Body: fileStream,
+        ContentType: "video/mp4", // ✅ Ensures streaming instead of downloading
     };
 
     const upload = new Upload({
